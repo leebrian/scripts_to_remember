@@ -1,0 +1,2122 @@
+curled from https://notes.openmrs.org/omrs18-1 at Tue Dec 18 16:49:36 EST 2018
+OMRS18 - <TITLE HERE>
+4 December, 2018
+
+Attendees
+
+
+
+Notes
+
+Greg gave a brief presentation on various offline data synchronization models and then there was a series of questions between the 40-50 participants
+
+curled from https://notes.openmrs.org/omrs18-10 at Tue Dec 18 16:49:37 EST 2018
+OMRS18 - Drug Management in OpenMRS
+5 December, 2018
+
+Attendees
+Facilitator: Andy Kanter
+Scribe: Angshuman Sarkar 
+Jonathan: Clinical Designer
+Zinab: Jembi POC in Mozambique
+Fredrick: Boabab Health in Malawi
+Petronila: Ampath Eldoret Kenya
+Kennedy: Palediam Kenya
+Ali Habib: IHS (Pakistan) 
+Brian: Cure in Uganda
+Nicolas: Liberia
+Jeremy: Banda Health
+Andy: CIEL
+
+
+Notes
+CIEL has a limited number of drug concepts 
+
+How do implementations do it?
+Regimens / Concepts / Drugs
+Brands / Generics
+Interaction checking / CDSS
+Allergy checking
+
+MVP
+The original concept was to ensure the ingredients existed as concepts in the dictionary and the essential drug list were in the table. So you can order or capture drug history.
+The idea was to have an essential drug list for starters.
+The drug concepts were grouped into sets e.g aspirin based sets and this was used for Regimens.
+ A vast majority of the concepts are US prescribable drugs. This is the current state of what CIEL is doing.
+Inventory Control by Brand
+
+Using Clinical Decision Support using Drugs CDSS
+Indications / Contraindication: A patient has a certain diagnosis so don't prescribe something else
+Dosing based on Gender, Age, Renal, Heptic
+Order sets
+
+Doctors have necessary check the Interaction checking. Do we have an OpenAPI? Licensed Engine?
+
+Do we have a module eg for HTN that has forms/ drugs etc How is this managed? Do we have a convience set
+
+Right now we have code reference maps for Regiments and Concepts.
+The concepts are then linked to the Drugs.
+Then concepts are in sets
+
+In OCL
+Concepts/ Drugs and Sets are distributed 
+
+Right now all the brand names are synonyms of the concept
+
+For CIEL 
+
+Inventory Management
+How to do you stock record stock of Drug? Is it by brand name? Also by Strength / Form(Is Rwanda an example)?
+
+How are fixed combinations tracked.
+Most of the forms e.g oral or IV for drugs are in the drug table. You can have these as separate concepts or not.
+
+Concept Attributes
+Attributes are concepts by themselves so for ingredients and combination can they be attributes?
+
+In the Ref App, the regiments are stages.
+
+Reference codes are the missing piece, you can't easily link concepts and drugs to regiments.
+Regiment is an order set.
+
+There are convience sets that were designed for creating user interface for drug ordering.
+The dispensed form of the drug is in the Drug table.
+
+Rwanda may have an inventory control module from the drug table.
+
+For Clinics/Hospitals stockables are by Brands.
+
+For AMPATH
+Concepts are created using the drug name and brands as synonyms similarly as CIEL.
+Synonyms are just used for searching and the drug table has the specific drug.
+
+Action Points
+If you have usecases for Drugs then suggest them on OpenMRS talk.
+Have a way to link Regimens/ Concepts/ Drugs/ Sets.
+
+
+curled from https://notes.openmrs.org/omrs18-11 at Tue Dec 18 16:49:37 EST 2018
+Welcome to Etherpad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents!
+
+Get involved with Etherpad at http://etherpad.org
+
+December 5, 2018
+
+Facilitator: Hamish
+
+Attendees:
+    Hamish (Brown) hamish_fraser@brown.edu 
+    Terry (RI) Thcullen@regenstrief.org 
+    Jan (UW)
+    Todd (PIH Rwanda)
+    Dave (PIH)
+    Sasha (PIH)
+    Evelyn (Uganda METS)
+    Gregory (PIH Haiti)
+    Raoul (UCSF Cameroon)
+    Anant (Possible) anant@possiblehealth.org
+    Wyleyen (PIH)
+    Natalie Price nprice@pih.org
+
+Evaluation and Metrics in Open MRS 
+
+
+1. interests
+		*  quality of care/baseline data collection needed prior to implementation
+			 - what are the clinical problems you are focused on?
+			are proper tests/evaluations being done during the care cycle ( and how to capture this in the EHR) 
+				patient charts on paper with gaps 
+		* capture of data including diagnosis
+			* evaluation of care based on the protocol for that disease
+		* medication error- 
+			* new protocol from IOM on patient safety t/o the world
+2. many projects are quite small
+		* collect key metrics overtime 
+3.Triple Aim as framework for evaluation  http://www.ihi.org/Engage/Initiatives/TripleAim/Pages/default.aspx  (Possible is using this) 
+		* patient experience of care
+		* population health
+		* cost per capita
+4. other specific projects
+		* randomize at the program level ; probably best to do at a clinic level 
+		* impact of alerts ( do people act on this) 
+		* data quality (what will you measure at the end) 
+5. Log Frame Analysis (based on PRISM guidelines)  (DFID in the 1970s) 
+		* input
+		* activities
+		* input 
+		* outcome
+		* impact 
+		* also need to include usability, use, data quality 
+		* most studies show impact up to outcome and only a few show clinical/other impact
+			* limited number of studies to show impact 
+6. example- using the EMR to impact HIV treatment failure
+		* was able to show that there was an increased acknowledgement of the failure and change in medication
+7. some standard questions that can be shared
+		* usability - some standard questions exist
+8. There is an ability to  large studies given the OpenMRS use
+		* need to ensure that the system is doing welll with comparable data ( uptime, use, decision support, etc)
+9..Entry level questions into the use of OpenMRS (individual and then multiple sites) 
+		* printable patient summaries- look if these are used
+		* do clinical reminders make a difference
+		* data quality and completeness rates in data entry (eg medication order entry)
+		* adding access to lab data ( how timely is the patient data; compare before and after interface with a lab system; how frequently is the data out of date)
+		* survey data - new system support for patient safety using android app- why is this happening? do an independent evaluation and see how to fix that (can help evaluate issues, including technical/implementation of other systems/ lost of connectivity due to poor connectivity and the impact of this on care) 
+10. Medium level
+		* impact of point of care data entry ( fix some things; can show impact on clinical care) 
+11.What are journals that publish data and what are the lastest articles that matter
+12. Other areas to look at
+		* Time/motion studies-- one with PIH and one with Martin Were
+		* usability testing and evaluation ( several ones to do that- expert review by several people
+			* have you organized the system to match the workflow 
+13. how data is used to help with quality improvement (data use) 
+		* QI led by clinicians themselves
+			* build our a dashboard that they can see and control on a regular basis
+			* engagement in QI increases engagement with the EMR
+				* Haiti
+					* many QI projects come from HIV as they have a POC system with data available
+					* data better due to improved connectivityt
+		* using patient level data to look at improvement
+			* if there is a POC system, and there are data entry problems-- need to evaluate data completeness
+				* need to do checking and cross checking 
+				* what is the cause of the data incompleteness
+			* if patient are looking at the record and reviewing the patient summary, and data isnt being used personally- poor data quality as it isnt helpful for you
+		* use data to get attention to a specific facility based on the data results
+		* use of data locally and then sent to the administrative level for action
+		* information system to find and recognize the clinical issue
+			* e.g. how many adult patients have their blood pressure recorded
+			* providers to question the quality of the data 
+				* clinical quality project to addess some of the complaints
+					* evaluate the clinical quality of the data  ( evaluate the use of the data) 
+				* how to do improvements in the process of the data/ outcomes
+				* hard to do data quality well
+14. case based surveillance
+		* metrics that are being developed for HIV care plan ; 
+		* hitting reasonable level of performance  (https://wiki.openmrs.org/display/docs/Case+Based+Reporting+Module)
+		* Uganda 
+			* national patient ID and national identifiers
+			* case based surveillance system that follows patients  
+	
+
+To Do:
+    1. references to be shared
+		* IOM link on patient safety (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6236868/) (https://www.oecd.org/health/health-systems/Measuring-Patient-Safety-April-2018.pdf) 
+		* WHO guide on M&E for digital interventions: http://www.who.int/reproductivehealth/publications/mhealth/digital-health-interventions/en/
+		* patient safety and mHealth development 
+     2. share specific questions that can be reused by others
+		* usability
+     3. Share journals that have pubications/ will share list of current informatics articles 
+		*      JAMIA, Internet Research, Telemedicine
+		* time/motion studies that can be referenced
+    5. venue to help share information- consider creation of a WIKI page 
+		* develop a framework for the wiki ( QI or PI, primary care research, tertiary care , academic ) 
+		* what are the major issues
+		* continuum of evaluation and metrics compared to stages of installation
+	
+	
+    
+
+curled from https://notes.openmrs.org/omrs18-12 at Tue Dec 18 16:49:38 EST 2018
+Welcome to Etherpad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents!
+
+Get involved with Etherpad at http://etherpad.org
+
+curled from https://notes.openmrs.org/omrs18-13 at Tue Dec 18 16:49:38 EST 2018
+Welcome to Etherpad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents!
+
+Get involved with Etherpad at http://etherpad.org
+
+curled from https://notes.openmrs.org/omrs18-14 at Tue Dec 18 16:49:39 EST 2018
+OMRS18 - Terminology Management (OCL and CIEL)
+5 December, 2018
+
+Attendees
+Facilitator: Andy Kanter (IMO/CIEL)
+Jonathan Payne: OCL 
+Anthony: Paladium
+Todd: PIH Rwanda
+Michael: Medic Mobile
+Dave: PIH
+Petronina: Ampath
+NAT: WHO
+Elen Ball: PIH
+Jeremy: Banda
+Mark: PIH
+Blessings : Baoabab Health Malawi
+
+Notes
+Handle place holder concepts
+MOH Mapping
+mHealth dictionaries
+New Concepts
+Authorship
+Intermingling local concepts
+
+With OCL the idea was to subscribe and then use the subscription module.
+
+It's very inconvient to create the subsets on OCL website and that is the work that 
+
+Authorship
+It's about creating a UI that Andela is talking about that will give OpenMRS the ability to create concepts on OCL so that we can create relationships of new concepts and all.
+
+Subscription module was to handle everything from openmrs version 1.8 and above. 
+In the future the subscription module was to go to the Ref App as a module.
+
+For bahmni interaction, there has been alot of discussions if the right place to do Bahmni specific implementation is on OCL.
+
+Tools that are starting to develop:
+    Helping governments manage a set  of public dictionaries nationwide. There is the OCL metadata brower. Customizable web-based tool for searching & browsing but not editing
+    Mobile app for browsing metadata while offline designed for Ethiopia. It's not generic yet, but there are plans
+    Authoring interface designed for OpenMRS that can be generic. Plans to make this tool more generic so that it can handle authoring for any type of metadata, including indicators, not just OpenMRS concept dicitonaries
+    Smaller tools: Python development package for creating your own interface with OCL using an API
+    Also a FHIR API wrapper that is in early stages of development.
+    Tool for bulk import of concepts for OCL.
+     
+Challenges
+Managing the drug table. For example using drug attributes for more details that are currently in concept sets.
+Syncing
+Creating subsets on OCL
+Mapping is also another issue.
+
+Only getting a subset of the dictionary from the subscription module.
+
+Interim concepts
+Having place order concepts. 
+In the future it would be ideal to look at concepts being created then CIEL would create the concept and then they are updated.
+Have a way for authoring
+
+Andela
+Update, they are on Sprint 12. You need to manage them more closely.
+
+
+Tomorrow night there is a birds of a feather session for OCL.
+  Roadmap, Have Early Adopters and General Availability
+  What is an MVP for what Andela is doing.
+  
+  QA 
+  
+OCL reference material for training: https://docs.google.com/presentation/d/11t173K0VQ6b2d7DwE2XfvyfXEE849YZ1X6245QIqf-U/edit#slide=id.p1
+DRAFT OCL Roadmap: https://docs.google.com/document/d/1uANoSmEeeiho64oMCZ6TH1uFuQ6njjHLJPeQhO6AhHQ/edit
+
+
+
+
+curled from https://notes.openmrs.org/omrs18-15 at Tue Dec 18 16:49:39 EST 2018
+	OMRS18 - Public Health Use of OpenMRS 
+5 December, 2018
+
+
+Faciltator:
+    Eric Manders
+Attendees
+
+
+
+Notes
+1. interest areas
+		* security, health based surveillance, immunizations
+2. how to use data from clinical delivery for public health use- what role can the EMR play in public health use
+		* derive clinical data from HIS system to inform public health 
+		* connecting systems is a prerequisite for this use case
+		* record linkage solution is required (as oppoed to a UID) 
+3. Role of surveillance officer for quality control function
+4. if outbreak response ,what did it take to instantiate in a crisis clinic 
+		* does it make sense to try to be prepared for an epidemic
+		* ebola treatment management is different
+		* case notification out of a specific system
+5. Ebola approach in Sierra Leone
+		* invest time in evaluation tool
+		* what did workflow look like in SL; does the HIS system support the workflow
+6.  Public Health Use Cases
+		* notifiable disease in the EMR
+			* geographically focused
+		* public health screening (Ebola) risk exposure vs diagnosis
+		* known exposure
+		* symptomatic ( isolation and referral to treatment unit) - suspected case 
+			* notifiable diseases (confirmed) 
+				* ncluster and suggest certain things (public health decision support in the clinical encounter) 
+		* chronic condition
+		* contract tracing 
+		* vaccine preventable disease (that are triggered by something)
+			* combined with coverage
+			* supply chain in the dB 
+		* other disease application 
+7. Push and Pull of data
+		* how does the report figure in 
+8. additional case management tools
+		* medication dispensing
+		* external reporting 
+9. who would we work with to try to flesh out these use cases/scenarios to come up with the OpenMRS configurations
+10. generalize surveillance use cases
+11. digital bridge https://digitalbridge.us/infoex/
+12. clinical decision support at the POC/ how does that interact with the public health system
+- disseminating case definitions with CIEL quickly and consistently to trigger action in emr (”hardest part”)
+		* getting the data to the people that need it
+		* using elastic stack; flat file to make a dashboard 
+		* AMPATH - communicated to the local government ; transmitted to the local government  (people can generate paper based system
+		* interoperability solutions that are needed for HIE 
+13. value propositions to the HIS/EMR
+		* has to include value / ISDR
+		* each disease is different 
+		* workflow as needed... document workflows that are important 
+14. Standard Clinical Decision Support 
+- what standard format for specifying trigger events and ciel mapping
+		* defaults to specific information and workflow sets
+		* push out the specific changes to a gold 
+		* can move people to the core 
+			* identify what is core and could be used in standardiziang the  CL disctionary 
+
+
+To Do:
+    1. look at developing scenarios
+		* define the specific scenarios 
+	2. figure out the CIEL dictionary and figure out how to drive to a common core 
+    
+
+
+curled from https://notes.openmrs.org/omrs18-16 at Tue Dec 18 16:49:39 EST 2018
+OMRS18 - Bahmni Chapter II - Sustainable Future
+4 December, 2018
+
+Attendees
+
+
+
+Notes
+Bahmni Coalition: 16 organisations 
+	- represent end users, developers, 
+- has thus far done 3 releases of Bahmni - 0.91 has been the most collaborative
+	* Given that there is a coaliton, does Bahmni still have a central vision that is core?
+	* How is the coalition funded?
+
+Sustainability of product as well as implementations
+	* Product must keep evolving - Bahmn is an implementer focused product -> Success of implementations is success of product
+		* Product vision => Improve quality of care and be effective for end users (doctors, lab techs, billing folks, registration staff etc)
+		* Coalition members have signed an MOU confirming the above
+		* Roadmap: There is an open roadmap process - Roadmap and process documented at https://bahmni.atlassian.net/wiki/spaces/BAH/pages/14712874/Roadmap and https://bahmni.atlassian.net/wiki/spaces/BAH/pages/693370885/Roadmap+Process+and+Contributions+including+Feature+Code+Contributions
+	* How do end users sustain this?
+
+Difference between coalition and community
+	Coalition: 
+		social collaborative subscribing to the vision of Bahmni, 
+		there are certain responsabilities that the coalition fulfills
+		Signed onto an MOU
+		Ensures governance of Bahmni
+			sustainability
+			Funding
+			Operations
+		Have a stake in the success and evolution of Bahmni
+	Community
+		Bahmni is a part of the OpenMRS community
+		Dependant on the platform
+		Contributes to OpenMRS
+		Consists of SMEs, implementors, developers
+
+Coalition Releases
+	* Commitments from various coalition members to meet certain deadlines with product work
+	
+	
+Fundraising
+	* Volunteer - In Kind donations
+	* Grants - Digital Square, DIAL
+	* Unrestricted donations - Thoughtworks
+
+Testing
+	* Required/Critical - but so far not getting enough contributions in this area
+	* Process could help move things along
+	* Some of the reasons for the delay is linked to this process
+	* Delayed by two months - team was not confident that it was completely tested
+	* Integrating implementors into testing
+
+A project may take the lead on a certain feature
+	May not have figured out the generalizability
+
+Is the vision that everyone uses the one standard, Bahmni version out there 
+	or if there are those who want to go ahead and can't wait for the next version, they'll go ahead and merge back later on
+	
+Is there a way for them to do that? Or do they veer off and hope that they can merge back?
+
+Needs to be a combination of the coalition contributing resources 
+
+curled from https://notes.openmrs.org/omrs18-17 at Tue Dec 18 16:49:40 EST 2018
+OMRS18 - Smartcard Technology
+4 December, 2018
+
+Presenter
+Mwenda
+
+Facilitator
+Simon Savai
+
+Notes taker
+Samuel Owino
+
+
+Notes
+The Key Concerns
+Identifying positives
+Linking to care
+Tracking multiple testers
+
+Unique Circumstances of HTS
+-HIV testing by nature is higly mobile
+-Multiple service point 
+-Several Providers
+-Facility without EMR.
+
+The Objectives
+(i). Business Goals
+ -Patient Identification
+ -Shared Health Records for linkage
+ -Improved tracking of the first 90
+ 
+ (i). Design Goals
+ -Alignment to existing workflows
+ -Interoperability
+ -Configuration over customization
+
+ P-Smart Strategy
+ -Manage the allocation at the national level
+ -Will provide the following information
+   a.Card Identification
+   b.Number of Cards issued
+   c.Client/card allocation
+   d.Card Status
+-Ownership: CDC supported by Palladium
+
+
+P-Smart Interactor
+ -Java Based application2
+ 
+ Features Include
+ -Read/Write APIs
+ -Cross platform support for Windows and Linux
+ -Data Compression and encryption
+ -Configuration 
+    - EMRS endpoint
+    
+Health Record Standards
+Based on HL7 version  2 stap-smart standard
+Customizable for p-smart use cases into 6 segments
+Detailed specification on shared google drive folder
+
+Q/A
+1.What is the capacity of the card?
+-Depoends on the chip being used, (e.g development was done using a 256KB card)
+
+2.Is the product opensource.
+-Code is available on palladium-kenya  github repositories. (The product is opensource)
+
+3.How many patients did you server with the card and what feedback did you get.
+-This was done in Kibera (in Nairobi county) about 1000 cards used so far, in a paediatrics use case. There was a Hackathon in April which brough together EMR developers.
+
+4.What is the cost of the card?
+-The 256card  at the Quantity of less than a thousand would be 1.2USD, the more cards you buy the cheaper the cost. There are much cheaper cards but the cards have  weaker security and mainly handle storage.
+
+5.How do you handle security?
+-Only interractors have the ability to read and write to card.There was an idea to include a security question. The other strategy is that the EMR would authenticate users to the interactor.
+
+6.Are there issues of incompatitbity?
+-The interactor has the ability to identify and analyse diffs. 
+
+7.Are the interactors readily available?
+-The interractor is free but the actual card reader would cost $5 a piece
+
+8.Are the cards immutable?
+-The card can be read many times (100,000 read-write cycles).
+
+9.What happens when the patient loses the card?
+-The patient will continue to receive servers and when the card is recovered the medical data recorded in the time the card was lost will be written to the card.
+
+Resources
+-https://docs.google.com/presentation/d/1roELmUcpSpUdTKHFZk9iclXb9REw1v6Ath-6apgzXcI/edit?usp=sharing
+-https://drive.google.com/file/d/1a7x3AioUwyh9xWcZhzrIUf-ItNV-3bTW/view?usp=sharing
+-https://drive.google.com/file/d/1N93bqr1aeTlCbngkDN-GTuLMeOycZZox/view?usp=sharing
+-https://drive.google.com/open?id=1iIgKMN5u97NlejWJJ1kQMDUsOPx-miDX
+-https://drive.google.com/open?id=1rafESzkoGTuWMj-aJ4zgmKBHSkUsUhvq
+
+curled from https://notes.openmrs.org/omrs18-18 at Tue Dec 18 16:49:40 EST 2018
+OMRS18 - Generic ETL (Extract, Transform and Load) Design
+ December, 6, 2018
+
+Facilitator: Burke Mamlin
+
+Attendees
+Kaweesi Joseph
+
+
+Notes
+Concerns expressed by implementers,donors, ministries about challenges with reporting on OpenMRS
+
+Solutions:
+	* Bahmni Mart - a Spring Batch application that flattens the data model - jobs can be set up based on requirements. Generic. Config done in JSON files. Some generic jobs exist already (e.g for patients and obs) . Some pre-packaged views also exist. This can then be used with any analytics engine
+		* The idea is flattens the existing database
+		* Mysql to Postgres
+		* Incremental uses Events to generate Markers to be used to track when updates happened(?)
+		* Bahmni has an Event Tracker that tracks changes to the data
+		* Effect of liquibase related changes? Schema change results in new table
+	* AMPATH
+		* AMPATH-specific MySQL flattened tables
+		* Created incrementally
+	* PIH
+		* Created a service that uses Pentaho to flatten OpenMRS tables
+		* Also uses jobs to flatten tables. Then other jobs do the implementation specific ETL based on the initial flattened tables
+		* Goes MySQL to MySQL, concerned that non-SQL would be inaccessible to non-developers
+		* Does not do incremental, so can be slow on bigger systems
+		* IHS used similar approach for TB app
+		* They use power BI (https://powerbi.microsoft.com/en-us/) for visualisations 
+	* Investigations
+		* https://kafka.apache.org/
+
+Most groups are flattening tables but this is for specific use cases. Is a generic approach possible?
+Probably not a better approach (flatening ithe database) in such a time when we have many tools
+	- Lucene (Solr, Elastic search)
+
+Could this be done using a document model? Or Lucene? (as opposed to another relational database model)
+
+At Regenstrief, every domain object was modeled as a document
+
+Medic: CouchDB to Postgres  - put JSON into Postgres. Can be done incrementally (https://github.com/medic/couch2pg)
+
+Could use HibernateInterceptors to directly push updates into ETL process but direct updates to database (e.g. liquibase) will skip these. Likely to impact schema/metadata vs data
+	* Could push the data into Lucene documents?
+	* A document for each datatype - and then indexing works well enough
+
+Mike: Idea of reading the MySQL bin log to make sure every change is captured - replication uses this approach.
+
+Potential next steps:
+	* Find a way to reliably detect when a piece of patient data has changed
+	* This would be independent of other modules.
+	* Use this as a basis for ETL process
+	* Could this be done in a DBMS-agnostic way?
+	* Need to find a way to not have the audit table become overly large/heavy
+
+
+
+
+
+
+curled from https://notes.openmrs.org/omrs18-19 at Tue Dec 18 16:49:41 EST 2018
+OMRS18 - OpenHIE Bahmni Integration
+6 December, 2018
+
+Attendees
+
+
+
+Notes
+
+
+curled from https://notes.openmrs.org/omrs18-2 at Tue Dec 18 16:49:41 EST 2018
+UI/UX Design
+Welcome to Etherpad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents!
+
+Get involved with Etherpad at http://etherpad.org
+
+What are teams' current processes?
+
+	* User interviews?
+	* Are teams doing mockups?  Up
+	* What tools are being used?
+	* Are teams doing prototyping?  How?
+	* User Experience testing? 
+	* What does that look like?  - Piloting?  
+	* User feedback in production?
+
+Software has historically been used for retrospective use. With POC, UI/UX is important
+
+	* What are the current processes?
+		* Observation interviews - majority of the time, logistics get in the way
+		* Show pictures, then the mockup is amended and coding starts
+		* Created templates that can be used easily during assessments
+
+	* Most of the time, users don't really know what they want.
+
+	* Mockups/Prototyping
+		* Have gone to doing mockups instead of buildling
+		* Prototyping can be important in allowing users to interact with mockups
+
+	* Tools:
+		* Fireworks - there is no prototyping
+		* Paper and pencil seems adequate when there are not a lot of design decisions
+			* Interesting to do prototyping by hand. How you arrange dropdowns, etc, may not be intuitive for the user. Load up paper mockups - users can "pretend" to interact
+		* Balsamiq - started with basic mockups, then started to do more prototyping. May not be the ideal tool for prototyping
+		* Sketch
+		* Google slides/Powerpoint - make buttons that go to the next slide
+
+	* How do you get the feedback?
+		* Face to face, interviews
+		* Emailing back and forth - people may simply open, hard to say if they actually go through, introduces opportunity for miscommunication
+		* Remote interviews: shared and projected screens
+
+	* Need more than the prototype - provide them with a use case, story, series of questions with tasks
+	* Can use software (costs money) that sends the mockup and makes a video that shows how user is giong through the mockup
+	* Have a video chat and walk it through - allows you to pull out details, can stop and ask additional questions
+	* Important to see someone's face - can give you different feedback than what you are being told
+
+	* Handing over the mockup/prototype
+		* More information can't hurt
+		* More specific is better 
+		* Can have a style guide for designers and developers 
+		* Going with a BA who can tell you more, exchange with developer
+		* There is sometimes tension between mockups and the system - have a back and forth until they come to consensus
+		* User stories along side the mockups to contextualize the requirements - helps developer understand how X will be used
+	* Testing
+		* What happens when what was developed doesn't match the mockups? When do you push back?
+		* Do scenario based testing - write up test scripts for the developer
+		* Make it really clear what is expected 
+	* Piloting in the field and getting feedback
+		* User base CHW: give them configured tool to run a simulation as they go through their usual workflow
+		* Focus group discussions
+
+	* User centered design
+		* Understanding the environment, motivation of the user
+	
+	* Medic Mobile - has a toolkit 
+	* Workflows show how information is flowing
+	* Translate these into requirements document (excel spreadsheet)
+	* After configuration, go back into the field - continue to do this until the app is considered scalable
+
+	* At first interview, go in raw - without anything
+	* Then go in with a prototype, low fidelity - less resource intensive
+	* This phase depends on the users. Plan for this exercise to take 1-2 weeks
+	* Go back to the office and do a synthesis exercise to pull out themes
+	* Document this information in Github
+
+	* Visual cues - quicker for users to on board
+	* What people find intuitive differs
+	* For designers, what sort of processes, SOPs are used?
+	* Have interview guides for service designers to guide the process and make sure it's consistant
+	* Background: Design team has a diverse background (nurses, economists, etc), made the process more structured
+
+	* What if you don't have time? Where should you not skimp?
+	* Every minute you skimp on UX is hours of a doctor's time (after it's all said and done)
+	* When there is little time, include the developer in the user interivews. 
+	* Skip the mockups and build something
+	* Iteration time - reduce the iteration time between BA and developer, BA and user
+	* Do demonstrations as often as possible (Agile methodology)
+
+
+
+
+curled from https://notes.openmrs.org/omrs18-20 at Tue Dec 18 16:49:42 EST 2018
+OMRS18 - Clinical Decision Support: Now and the Future
+6 December, 2018
+
+
+Facilitator:
+    Jonathan Teich (intersystems) Jteich0@gmail.com
+
+Attendees
+
+Mark Goodrich - PIH mgoodrich@pih.org
+Patrick Klangoo Kenya EMR gpotnyllus@gmail.com
+Ray Ransom - CDC rranson@cdc.gov
+Ellen Ball - PIH eball@pih.org
+David DeSimone -PIH ddesimone@pih.org
+Terry Cullen-RI  thcullen@regenstrief.org
+Andy Kanter - IMO andy_kanter@yahoo.com
+Sasha - PIH - akulinkina@gmail.com
+Johnblack- Uganda jkabukye@gmail.com
+JeremyOgemba (banda Health) jeremyyogembo@gmail.com
+Brian Lee- CDC - openmrs@prepend.com (fine to add to list)
+Mores
+Jan Flowers - UW
+Anant- Possible (anant@possiblehealth.org)
+Nat- WHO (ratanaprayuln@who.int)
+Jessica Ruff -Ruffjm@gmail.com
+Relebohile-PIH (rlebatla@pih.org)
+clement trapence (PIH) ctrapence@pih.org
+
+notes from last year  https://docs.google.com/document/d/1VNmZplG3XAnC7M7aXdgV89ENaNY9yXUlwoSr21RmrOM/edit
+
+Notes
+
+1. Notes from today
+			* CDS Hooks (http://cds-hooks.org/): create standardized triggers, read data through FHIR and receive data back, real-time feedback for clinician feedback
+				* To be incorporated into FHIR Release 4 (late 2018?)
+			* FHIR Clinical Reasoning Module (Vlad) incl. Clinical Quality Language (CQL) and FHIRPath (http://hl7.org/fhir/clinicalreasoning-module.html)
+			* HL7 CDS Standards (outdated) (http://wiki.hl7.org/index.php?title=HL7_CDS_Standards)
+			* Computational tradeoff between Just in Time rules and batch rules
+			* OpenCDS (http://www.opencds.org/)
+				* Comes with domain-specific rules (pharmacy, vitals, labs, etc.)
+2. what do you want to know/do? what are you doing?
+		* too much to do to; need quick win ideas
+			* ED triage in Haiti for PIH (based on south african triage system) 
+			* building screening application for Malawi - screening for NCD/HIV/TB- recommends the next step after they are triaged
+		* use of the flag module that is available in core OpenMRS
+		* ststematic change of algorythms
+			* last viral load  taken and would have work order to provide lab tests
+			* looking at viral load supression- clinical reaction
+			* lab results and action based on them
+			* TB/patient centered HIV case management- contacts and behaviors- health care worker exposures with early ID
+			* CEIL/ decision detection for clinical algorythms
+		* patients go to pharmacy and get medication-- help patients get a diagnosis or treatment advice prior to going to the hospital
+			* pharmacy as a clinician (private)
+		* using OpenMRS as teaching tool (arden syntax; find examples)
+		* diagnostic and treatment focus
+		* find examples that exist/are working in OpenMRS -- similar to doing Smart Forms
+		* http://wiki.hl7.org/index.php?title=HL7_CDS_Standards
+		* consider doing as an external system
+		* recommended rules to start/ rules tool
+		* smart forms to use (calculator tools like PHQ 9) - manual work arounds (Possible)
+		* CDS that responds to provider role needs
+		* issue WHO guidelines in a computable way (include CDS as a derivative of the guideline)
+			* using CDS Hooks
+			* function of the platform so that the platform can link to through an API 
+			* could expand your guidelines 
+		* physician support that is needed (e.g. maternal data entry at the POC and minimize the time spent finding the solution)
+		* reusability of the CDS- value set/rules distributed in CEIL like distribution
+		* PIH mortality predictor calculator
+			* how can they share/ code changes when sharing/ results
+			* how does advice get changed over time
+		* flags change
+			* different combinations of states and see that change over time (temporal state engine)
+		* Boolinish logic
+			* tkaing elements of data already collected and using the data
+		* Action
+			* inform
+			* message (order/administration) 
+			* assert a state 
+		* making it shareable at a different use case 
+			* different medication use (variations that are not universal)
+		* define standard language for content (allow for particular use )
+		* need to connect with other groups
+			* proactively looking at other organizations that are working in CDS in LMIC
+		* greater engagement of different groups if CDS
+
+3. summary
+		* different ways of CDS (screening logic that is needed for CDS) 
+			* flags
+			* smart forms
+			* decision trees
+			* Dx/TX advice
+			* scores ( make a score module that could support different scoring needs/results)
+			* CDS over time (clinical cascade) 
+				* condition that progresses
+				* new environment changes response (e.g. Ebola)
+		* Codes and Value Sets
+			* using taxonomies
+			* sharing data sets
+		* Content
+			* how do we specify ( Arden, syntx, maintain in shareable format, exchange)
+			* codes, value sets, rules
+		* CDS at different levels
+		* OpenMRS architectural move to accelerate this- coordinate architecture 
+			* build out a few
+			* recognize that they exist and have someone build them out 
+		* Quick Wins
+			* CIEL 
+
+
+Action Items/ Follow up Items
+1. follow up with OpenCDS
+2. Identify other organizations that are working in this space 
+3. configure some re-usable CDS specific challenge
+4. content library- in the future 
+5. set up a space where different implementers could go in and explain the type of CDS that they are doing - may be WIKI or not
+6. establish an email list
+7. multiple potential use cases through PIH- Dave can share these 
+
+
+
+curled from https://notes.openmrs.org/omrs18-21 at Tue Dec 18 16:49:42 EST 2018
+OMRS18 - Improving Data Quality
+7 December, 2018
+
+Facilitator
+Carina matimbe
+
+Attendees
+Andy
+Hamish
+Natalie
+Sasha
+Relebohile
+Masebeo
+Ramohapi
+Jessica
+Gregory
+Blessings
+Malumbo
+Odingo
+Kenneth
+Fredrick
+Kanthungo
+Teboho
+Mastamet 
+Ruth
+Chege 
+Mores
+Wanyee
+
+
+
+Notes
+
+	* What are the main problems encountered when it comes to Data Quality in Digital Health Systems? - Incoplete data entry by health workers, Preference of paper based data collection, data formats, tools are not in line with the dt that needs to be captured
+	* How could we ensure consistency, correctness, and integrity? Need to standardize tools; have standard operating procedures
+	* What are the best practices for involving clinical staff to fill out all required fields in forms. When you have autopopulated data, store it separately [blogpost link in footnotes]; like to include mandatory fields - and this may not be available [linkblog  in footnotes]. How can you opt out of mandatory fields instead of filling, Proper mapping of codes in IL situations
+	* Process of reviewing inserted data
+	* -Is it common sense and a good approach to review data? Generally, it is a good idea to take a subset of interactions and double check. If they are entering data from paper. you can take 5-10% of forms and go back and double check. Peru evidence is that there is a high degree of errors when secondary data entry is performed or the original data entry on the report was erroroneous . It is better to have direct data entry, but it is harder to validate the data then. 
+	* -Is it a good approach to use systems or tools to help correct information? It is important to put validation into the UI, can also report after the fact. However, it is best practice not to easily allow for free-text entry. Step 1: ensure that dropdowns or short lists contain appropriate choices that the users will recognize (don't use ICD codes if patients don't present with ICD diagnoses-use clinical names). Step 2: If data is not found in the short list, allow for a larger database search from CIEL, etc. Step 3: If you can't do a live search, do a separate OTHER with separate text field. Don't allow direct free-text override of the dropdown as all you will get is unanalyzable free text. Lastly: If you have a bunch of free-text, at periodic intervals, summarize and check against CIEL (openconceptlab.org) If missing from CIEL send request to CIEL to see whether new concepts can be created and added to your concept dictionary and form.
+	* -Impact of data in the registry of information written by others? How to improve?  Training of users, direct mentorship, regular data reviews, job aids to accompany the electronic data entry process, data validation rules
+	* -What could be done to ensure genuine replication of data from one place to another? Data can be lost literally between one system and another. This can be evaluated by checking reports from each system. A more common problem is that data is "dumbed-down" between systems. For example, the EMR might have great clinical data about the patient's condition, but a single code is sent to another system for billing/reporting. The data in this system might be fine for that particular use case, but if that data is used for other things, then the data will be inaccurate or incomplete. It is important to know where the data was collected and try to go back to the original collection to ensure accuracy.
+	* Analyzing and separating data from inpatients, outpatients and patients who lost follow-up
+		* Major problem outside of a sophisticated/comprehensive EMR system where a patient is followed throughout the continuum of care (e.g., outpatient, inpatient, surgery, inpatient) is the inability to capture outcomes for unique patients and estimate important metrics like mortality.
+	* Identify and find solutions to locations where data is being captured incorrectly
+	* What are best practices for improving data quality
+		* Monitor the system throughout – e.g. system down time, overall number of entries, completeness of key variables, resulting data quality
+
+
+I went to a data quality working group session at the American Medical Informatics Assoiation meeting last month in San Francisco. It might be a bit too informatics based, but I think some of the concepts are useful and there are some useful resources/links included:
+    
+    Data Quality WG:20 CRI-WG
+
+Data quality collaboratory Michael Kahn started under PCORI. 
+Reference: Houston, L 2018 App Clin Trial
+EHRs are primary source to compare data quality. Majority was completeness and accuracy, case ascertainment.
+NIH is working with Achilles tool in OHDSI. Use JIRA to capture data quality issue.
+OHDSI/OMOP version 1.6 just released. Plan to release DQ rules around each convention.  Check OHDSI tutorial recordings from symposium in October. THEMIS initiative.
+Vojtech interested in unit conversion. Convert to target terminology AND units. Value as conceptID can also be checked. https://github.com/OHDSI/StudyProtocolSandbox/tree/master/themis/extras
+
+LOINC top 2000 is from three institutions 10 years ago. Have tried to convert to SE units. THEMIS is broader and has Korean involvement. https://github.com/OHDSI/StudyProtocolSandbox/tree/master/themis
+
+Rachel Richesson: NIH Collaboratory Recommendation for Pragmatic clinical trials. Encourage facility participation in large scale clinical research. Might be a partner for IMO?
+Competitive grants given for clinical trials. 1 year planning phase and then trial phase. 
+Interested in describing patient cohorts and similar characteristics, but ALSO are looking at EHRs for patient outcomes.
+https://www.nihcollaboratory.org/products/assessing-data-quality_v1%200.pdf
+TSOS trauma survivors outcomes and support pragmatic trial in 24 sites.
+
+Need to find the right people who know the flow and quality of data at each site in the research study.
+
+Karthik: All of Us study. allofus.nih.gov 35 sites. Some security issues. Converted to OMOP. Choose studies for underrepresented populations. Data transferred using CVS. Quality considerations: conformance to OMOP plus some extra checks, data completeness, data plausibility (temporal checks, clinical checks and concordance), data provenance, data currency and fitness for use. Leveraging ACHILLES for 90% of data checks.
+
+Synch for Science - FHIR messages for OMOP/OHDSI project. http://syncfor.science
+
+Informational loss and degradation versus representational accuracy.
+Want a data model agnostic quality model!
+Is there a data quality framework for unstructured data? NLP working group in OHSDI Capturing what system and what version ran each step of the data flow.
+
+Christian Reich;
+Probabilistic estimation of quality metrics. Seed population, build model, find inflection point, create sensitivity/specificity/time stamp numbers
+Tools: STATIUS and ACHILLES, Rabbit-in-a-Hat tool for mapping coverage, USAGI https://github.com/OHDSI/Usagi  http://www.ohdsi.org/web/wiki/doku.php?id=documentation:software:usagi
+
+
+
+Rimma: NYC-CDRN DQA Challenge
+6M patients from 6 different organizations (9 sites) Submitted via RHIO/Healthix, mapped to Genome Center, converted to OMOP data model. 
+
+Alan Bauck: KP Center for Effectiveness and Safety Research
+CESR Virtual Data Warehouse
+
+
+Some recent blogposts on data quality:
+
+5 ways to improve 'required fields' in the #EHR 
+http://www.gregoryschmidt.ca/writing/required-data-fields
+
+
+Manage auto-populated EHR data separately 
+http://www.gregoryschmidt.ca/writing/auto-populate-ehr-data-vs1
+
+Is this true? Problems with Past Medical History data 
+http://www.gregoryschmidt.ca/writing/problems-with-past-medical-history-data
+
+Is this true? Confirming validity of Past Medical History data 
+http://www.gregoryschmidt.ca/writing/confirming-validity-of-past-medical-history
+
+
+curled from https://notes.openmrs.org/omrs18-22 at Tue Dec 18 16:49:42 EST 2018
+Point of Care in the Reference App
+
+Facilitator: Ellen Ball
+
+Notes
+
+Attendees and thoughts
+Anthony/Kenya, support KenyaEMR - interested in handling workflows
+Flavio/Mozambique - implementing Bahmni POC
+Michaela/Liberia - planning to use ref app in Liberia
+Ali/Pakistan - helping Jembi with ref app, looking at using it in Pakistan
+Innocent/Rwanda - hoping to use OpenMRS for POC
+Steven/Uganda - UgandaEMR supports retro entry, need to implement POC
+Dave/PIH - 
+Chris/Kenya - learn about ref app
+/CDC Nigeria -using OpenMRS retro entry.  Looking to expand to POC
+Dana/Kenya - looking to learn what others doing 
+/Kenya - implementer supporting KenyaEMR, understand other uses of ref app
+Mozambique - supporting EDTS OpenMRS.  the way forward is point of care
+Madonna/Mozambique - partners "pretending" to implement POC EMR in Mozambique
+
+
+
+Ali - wondering what is keeping Uganda from using POC
+Steven - maturity is one concern.  More equipment, training.  Retrospective style forms in EMR are sometimes being used for POC.  Reg, vitals, labs,meds,consult on POC leades to clinical decsiion support.  Need to grow into it
+
+.
+ 
+<Demo of PIH Mirebalais flavour of Ref App (very similar to the standard Ref App) being used at PoC in Haiti>
+	* Allows fingerprint capture at registration
+	* Allows ID cards to be printed after ID assignment
+	* Steven - emphasised the nuance between configuration and customisation with regards to the registration dashboard on the app demo'd
+	* Configurable widgets on patient dashboard
+	* Supports entry of ICD10 codes for diagnosis -> brings up appropriate concept when you type in the ICD10 code
+	* Possible improvements: Show the relevant forms based on the patient e.g. if someone has had an intake visit already, the intake form does not show up as an option on the dashboard, NCD form only appears if patient is enrolled in the NCD program etc
+	* Support entry of drug dispensation from pharmacy
+	* Supports emergency triage as well
+
+curled from https://notes.openmrs.org/omrs18-23 at Tue Dec 18 16:49:43 EST 2018
+OMRS18 - REACT and react components
+7 December, 2018
+
+Attendees
+Mark 
+Burke
+Miek Seaton
+Limbani
+Joshua
+Berchmas
+REgis
+Brandon
+Kaweesi Joseph
+
+
+Notes
+Burke Recommends a pair of Youtube videos as introductions to React
+
+Goals of people in the room:
+    primarily to see React for  possible future use
+
+To do: 
+    List out the written components and Document the functions of each component
+    Add releases to OpenMRS React
+    add to the readme that anyone using this should contact Mark Goodrich to ensure that people don't use OpenMRS React and depend on something that changes without warning
+    OpenMRS Class name to be changed to make it less associated with the OpenMRS Java Class
+    
+
+Starting with React
+	Look in the Readme.md on openmrs github: https://github.com/openmrs/openmrs-react-components/blob/master/README.md
+	https://github.com/facebook/create-react-app
+	
+Versioning
+	* React projects typically change major version when a major version of React are released – i.e., if React goes from version 16 to version 17, then the project is updated from version 1 to version 2 with a dependency on the new React major version
+
+Bahmni's React content is here: https://github.com/Bahmni/form-controls 
+
+Ticket 1201 in React may enable Bahmni to use React 16 now
+
+
+
+
+curled from https://notes.openmrs.org/omrs18-24 at Tue Dec 18 16:49:43 EST 2018
+OMRS18 - <TITLE HERE>
+7 December, 2018
+
+Attendees
+
+
+
+Notes
+
+curled from https://notes.openmrs.org/omrs18-3 at Tue Dec 18 16:49:44 EST 2018
+OMRS18 - NCDs (Turkana 5)
+4 December, 2018
+
+Attendees
+Lead: Todd Anderson
+Notes: Burke/Andy
+
+
+Notes
+Why here:
+    Nairobi NCD MOH
+    Personally affected
+    Big public health issue
+    Find out what is happening
+    Opportunity to collaborate with other organizations/countries
+    
+    Lots of other opportunities to use the EMR for NCDs in all sorts of use cases (quality improvement, etc.)
+    Data re-use, risk factor identification/management
+    Connecting to registries
+    Need cohort definitions.
+    NCDs are more like care management (similar to HIV) where cohorts are defined, specific forms completed, care management processes, QI, analytics. MANY MORE PATIENTS need to be managed.
+    
+    
+    Definition of NCD:
+        Is this all chronic disease, or is non-communicable? Some people want HIV to be included!
+
+Funding going down for HIV, not necessarily going up for NCDs at a sufficient rate.
+
+
+People were seeing repeated admissions, ha difficuty connectig NCD programs and acute care.
+Need to improve quality of care, manage consistency of care.
+Some funders ONLY want HIV data to be in the system (don't want to pay for anything else). They let non-HIV clinics see everything, but HIV clinics can only see HIV data).
+
+Some funders are looking for sustainability.
+	* Could we leverage interest in sustainability to push for integrated systems?
+
+Screening is critical for NCDs (screening also prevents)
+	* Similar to HIV, NCDs involve going out into the community to identify the populations... and then manage them (again similar to HIV).
+
+Future action items:
+	* System integration across disease
+	* Sharing Form Bank
+	* Future bank of patient dashboards
+
+curled from https://notes.openmrs.org/omrs18-4 at Tue Dec 18 16:49:44 EST 2018
+OMRS18 - <TITLE HERE>
+4 December, 2018
+
+Attendees
+Terry - facilitator
+Jan
+Eric
+Ray
+Denise
+Blessings
+Malumbo
+Cidalia
+Flavio
+Gibril
+Ali
+Angshuman
+Wyleyen
+
+Notes
+Problems
+	* Lack of standards across facilities, implementing partners, and across programs
+	* Duplicates
+		* Multiple numbers
+		* Same number assigned to more than one person
+		* Different demographics
+	* Continuity of Care
+	* Multiple systems 
+		* CHW
+		* No way to synchronize this information
+	* Ex: Nigeria
+		* Two ID systems
+
+
+When does the deduplication happen?
+- have to identify the patient at the source but have no means to do it - should happen at the time of service
+- primary (registration number, etc) vs. secondary identifiers (house number, etc)
+- smartcard etc doesn't always get brought to the clinic
+
+Patient Matching module doesn't work with sizable data
+When do duplicates happen because of forgetfulness/  accident, and when does it happen because someone is deliberately hiding their identity
+- solution for these would be different for each
+- sometimes a convenience factor as well - easier to just ask for a new ID
+- some people do this to sell the HIV medications they can collect from multiple IDs
+
+why do we want the person to be identified
+- continuity of care
+
+
+what are different sites doing
+- auto generated IDs
+- secondary parameters (phone number, household number, address, 
+- algorithms 
+- deterministic matching and fuzzy logic, probabilitistic matching
+- soundex
+- Denise's variables in Malawi: first name, last name, married name, age, gender, classification by HIV status, 
+- Ray: Mother's maiden name is key in Uganda
+Ray: focus on those that want to be matched first - those who want to continue getting service
+- biometrics
+- Angshuman: facial recognition in India, success rate 93%
+- pictures of patients
+- fingerprint scanning - Nigeria OpenMRS
+-
+
+Policy Implications
+- Nigeria: loose environment currently, so able to do the fingerprint scanning
+	- national data repository supported by pepfar
+	- don't store the fingerprint scan, store the generated ID from the processing of the fingerprint
+
+Technology is not enough, needs to be a combination of factors
+- but creating solutions that work both within a facility and outside of the facility
+
+What makes it a unique ID?
+- biometrics is a way to get to a unique ID, but it's not the ID in itself
+- unique ID is system dependent
+
+
+OPTIONS: 
+    
+1. ID+FP
+2. facial recognition
+3. 2nd factor algorithm
+
+Ray: every country could come up with their own algorithm, but what can OpenMRS do?
+- facility level ID
+- deduplication for movement of patients, centrally hosted registry, intrasystems
+- linkages between systems such as laboratories
+- does openmrs let you back out of linkages - thought it was a duplicate, but it wasn't
+- there is system work to do in order to really address patient ID
+
+Anshuman: India example of carrying an ID card; need an incentive for patients to carry ID in order to receive care
+
+mother-child pairing
+ID cards may have issues around the age they are given
+ebola ID of patient much more critical than watching trends of viral load over time
+
+there is no one solution fits all
+
+
+
+
+
+curled from https://notes.openmrs.org/omrs18-5 at Tue Dec 18 16:49:44 EST 2018
+OMRS18 - DHIS2 Integration
+
+Facilitators
+Jonathan Mpango
+
+Notes
+
+Presentation from Possible Health, Nepal (Anant Raut, Laxman) DHIS2-Nepal EHR (Bahmni)
+Current method is familiar using paper registries that get aggregated monthly into numbers which get centralized via DHIS2 but this was taking too long to be relevant.
+Using DHIS2 integration App in Bahmni. 1. Generate reports from Bahmni, 2. Verify 3. Transfer to DHIS2. Using Nepali calendar. Bahmni generates downloadable reports which can be verified in Excel. 
+And then submitted to dhis2 with a one click button (submit to Dhis2) and the generated data are posted to dhis2
+
+
+Bahmni-Mart includes mapping tables and syncing service to sync indicators from Bahmni to DHIS2
+
+Angshuman Sarkar described an effort in Bangladesh to transfer data into DHIS2
+	* Mapping challenges (DHIS2 requires mapping of several details)
+	* Took into consideration existing efforts on DHIS2 integration
+		* DHIS2 Reporting Module
+		* Jembi's DHIS2 integration module
+	* Would like to see OpenMRS creating an ETL solution, since mapping from flattened tables is much simpler
+
+? is exporting national data into DHIS2 from national repository
+
+LivingGoods set up local DHIS2 instance with low level data mappings.
+	* Using NiFi to transform data from MedicMobile into DHIS2 instance via web api
+	* DHIS2 sync feature is used to sync data from their DHIS2 to their national DHIS2 instance
+
+KenyaEMR generates reports that are sent through an interoperability layer to DHIS2 using ADX
+
+UgandaEMR is targeting >1000 sites by end of 2019.
+	* Using offline mode
+	* DHIS2 app pulls in metadata
+	* Generate data from UgandaEMR as Excel report
+		* Excel report is a self-contained submission (includes hidden UIDs for orgunits, data elements, periods taken from metadata)
+		* Some sites manually transcribe
+		* Sites can optionally upload Excel report into DHIS2
+
+Jembi created a DHIS2 Connector module that provides a mechanism to map dataset from OpenMRS to DHIS2
+	* Working with client to create a DHIS2 Track app that sends patient-level data elements to DHIS2 Patient Tracker
+	* Runs on top of OpenHIM
+
+James Kariuki (CDC) asked about awareness of the ADX profile
+	* Has been using the DHIS2 Module to demonstrate exchange from OpenMRS to DHIS2
+	* Working with Bob Joliffe, who works in Oslo with DHIS2
+
+Next Steps
+
+curled from https://notes.openmrs.org/omrs18-6 at Tue Dec 18 16:49:45 EST 2018
+Welcome to Etherpad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents!
+
+Get involved with Etherpad at http://etherpad.org
+
+
+Session: Data Presentation
+Facilitator Gregory Schmidtt
+
+Issues highlighted
+	* Templating/flexibility
+	* Pulling data from OpenMRS
+	* What to show
+	* GOVT Reporting
+	* Surveillance
+
+Tools being used:
+	* Power BI
+	* Pentaho
+	* Jasper Reports
+	* Tableau ($$)
+	* Kibana
+	* Excel
+	* HighCharts
+	* SQLeo
+	* Metabase
+	* ElasticStack
+
+ETL Structures:
+    - tables for each encounter type
+    - delta
+    - complete rebuild (hitting time barrier)
+    
+
+Processes
+AMPATH -> From SQL to ETL to ElasticStack
+
+Complete transform in every run vs delta - folks are doing different combinations of this
+
+<Demo of AMPATH visualisations using Kibana and ElasticStack
+	* Question around data structure - data is structured to support the the quick visualisation (row per patient with asscoaited obs)
+	* Question around the server hardware being used (AMPATH's local server)
+	* For more questions around this contact Johathan Dick
+
+
+
+NEXT STEPS
+
+curled from https://notes.openmrs.org/omrs18-7 at Tue Dec 18 16:49:45 EST 2018
+Welcome to Etherpad!
+
+This pad text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents!
+
+Get involved with Etherpad at http://etherpad.org
+
+
+SESSION Local Capacity in Countries (Building it)
+
+FACILITATOR: Cynthia & Jennifer Antilla
+
+
+What capacity are we talking about?
+	Development-> How do we get developers, who are the core developers, (alot of the core development happens in the US. Can we decentralize the decision making)
+	Understand better how I can find people in cambodia to help with implementation
+			How do we have local capacity to provide local user support?
+	WHO is creating a set of toolkits, as requested by governments. How to appropriately working with developers (Governemnts and Organizations know they need a digital solution but are overwhelmed by the choices. How can we help them understand the Open( MRS, SRP, ect.) Solutions).
+	How do we include people who are non-developers
+			
+How are people building their capacity currently?
+	PIH: recruiting and hiring people or through word or mouth.
+	OpenMRS: people coming to the community, and then GoSC -> pipeline?. Using the dev stages, and incentives like giving them more privigleges and chances for scholarships, GoSC meeting attendance. Encourgaing them that the more you contribute the more likely you are to position yourself to be hired by an implemention. 
+	PIH Mexico: Local Hiring, Not a lot of resources, volunteer position posted. But organization doesn't feel like they can afford to pay the developer. 
+	Devs: Attracting and Retaining, getting to dev 3/4 and then people are looking for other higher paying jobs.
+	Why not volunteer? What do I get out of it, if I'm not going to benefit to this exchange, then I'm not going to participate? Is there a cultural aspect of sharing. 
+	
+What are people expecting to get out of it?
+	Jobs? Between dev 0-5 when do I get a job, and when can I expect it?
+	Dev0-5 scale developed so that people looking for developers can rank their skills.
+	Money? Directly from OpenMRS? Hasn't really been seen a lot within the community. 
+	
+Change and Organizational Development
+	Problem with nursing "go slow." Staff are underpaid, overworked, and not getting training on the things that are needed/wanted, and now your bringing me somthing else.
+	
+Non-Dev skill Sets
+	A few calls on the talk have been madefor BAs, but no response. 
+	Anything thats none developers, a lot of the BAs aren't really sure what to do. 
+	Exciting to see and hear BA/product managers are attending the conference. How do we include this in Kenya
+
+Kenya expereinces
+	If we focused on skills and if they could be learned a training currculum (backup the data, netowrk support, troubleshooting) for someone to be able to handle their job responsiblities
+	Did not focus on academic requirements
+	Facilitators of the OpenMRS conference have been some of the students
+	Person you are targeting are often employeed by the government, how to maintain skills with transfer
+	can we make e-learning.
+	
+Relying on community to be motivated, how do we help people be self driven? What are the opportunites out there? 
+
+Documentating our current learning resourcces, and guidance for how to use them.
+
+Connecting better with 3/4 year, but could it be introduced earlier in the curriculum.
+
+Idea of having a Coding/ BA Academy
+
+Match making service
+
+Non-Devs-> talk and github are intimididating, possible room for improved documentation.
+
+Hosting student attachements and internships. 
+
+Basic OpenMRS Training at Moi through Reginstrief?
+
+What opportunities would enable capacity building
+
+How do you find out about capacity building activity?
+
+What is our current pipeline? very poor, critical to developing next steps.
+
+NEXT STEPS (lightening actions)
+
+1. Cynthia to reach out to (Kenya) and see if the modules can be leveraged within the openMRS community.
+2. How to onboard members to talk
+3. in need of Devs/BAs, and a pipeline
+
+
+
+
+
+
+curled from https://notes.openmrs.org/omrs18-8 at Tue Dec 18 16:49:46 EST 2018
+OMRS18 - OpenMRS for Oncology/Chemotherapy
+5 December, 2018
+
+Attendees
+
+
+
+Notes
+ 
+ Brief introduction to Chemotherapy by Johnblack Kubikye.  This is similar to other drugs but they are given in sets and toxicity must be closely monitored.
+ Scheduliing is very important to make sure the doses are administered at the right time
+ Dosage tracking is very important
+ There are standard regimens but doctors may vary these regimens slightly.  New doctors may stick to standard regimens.
+Along with chemo drugs, Pre-medication, Post-medication is administered
+ 
+PIH started this work in July with IBM HealthCorps
+
+The OpenMRS data model was modified:
+     - Chemo dosing instructions added
+     - Order Groups, Order Sets extended
+     
+The UI that was built by IBM/PIH was demo'd:
+	*      For a given patient, an oncology dashboard will show oncology/chemo specific information
+	* From there, doctor can order chemo
+	* Doc selects pre-configured sets
+	* Can modify the sets as needed, change doses or remove/add medication
+	* Doctor can review set of drugs order and submits order
+	* When patient arrives at clinic, chemo administration can be documented
+	* Nurse will fill out chemo admin form
+	* From is pre-filled with the current order.  Nurse can modify
+	* A summary will show which cycles have been done     
+
+Jonathan Teich asked if it supports ordering different drugs for different cycles within a regimen.  For phase 1, this is not supported. As a workaround, concurrent cycles can be ordered
+
+Regis from PIH asked if adverse events can be documented:  Free text notes are available in phase 1
+also does it support patients missing sessions and rescheduling? Not at this time
+
+Can the YAAR (Yet another Automated Regimen) tool be used ?  Mike Seaton responded that it needs some analysis and might not be easy to install 
+
+Overall, the engagement with the IBM was a positive experience.  They brought in a very good team.  3 weeks was not enough time to complete MVP.
+
+Next steps:
+	*     PIH needs to analyze the scope of work left. 
+	* We (PIH/OpenMRS) needs to find a way to tie up the loose ends for phase 1
+	* PIH will implement it in a limited fashion
+	* Hopefully we IBM will re-engage with us to help build phase 2
+
+	* 
+
+curled from https://notes.openmrs.org/omrs18-9 at Tue Dec 18 16:49:46 EST 2018
+
+OMRS18 - Technical Roadmap (getting to OpenMRS 3.0)
+5 December, 2018
+
+Attendees
+Moyosola Bamidele (CDC Nigeria)
+Laxman Manandhar (possible)
+Sanjaya Poude (Possible)
+
+Notes
+
+OpenMRS 3.0
+	* Not saying scrap everything and start from scratch - looking more at harvesting
+	* Not trying to have a step wise improvement - have a vision of an optimal solution, not in response to a four month deadline
+	* Potentially front end and back end
+	* New technology for building forms+
+		* POC and RDE are both needed
+		* Need to build forms that support both and in-between
+		* Need to analyze the problem 
+		* Use in distribution
+	* Ability to have faster development cycles by separately the front end
+	* Reporting - good for data collection - need to have better reporting support 
+	* Easy, flexible way to switch workflow
+	* Internationalization of metadata
+	* Cloud services
+	* Better clinical decision support
+	* Guideline driven care 
+
+	* Bundling modules - HIV, MCH, TB, etc
+		* Start with common bundles most likely to be used that are brough into the ref app
+		* Maybe not the way to go - there is some commonality 
+		* Not just the forms and content - there is the workflow
+		* Make sure the right forms are there for a program
+		* Should be looking at the technologies - not the vertical disease areas
+		* Trying to build it vertical is not the way to go
+			* How do we want the software to function?
+			* What do we need out of the technology?
+			* Pitch for the gold standard: Build (on paper) what would meet 80% of the need
+			* Knowing that there's a lot of work to do to get to the ideal and willing to do it because of the advantages
+			* Cost it out, prioritize what is on the technical roadmap - could be 
+			* Can't do this alone as independant organizations 
+			* How do you get that amount of resources out of existing organizations
+
+	* One thing when you write against the platform vis a vis ref app
+		* Write underlying specifications that we all agree on and it's up to the implementer to create it
+
+We know what we want....but how do we get there? What is the path forward?
+	* We have an opportunity to do more collaboration
+	* Multiple opinions around this
+	* One size fits all is not a solution for the community
+	* Platform - this may be a solution but is there another one?
+	* Find enough of a framework to work together on
+
+Difference between collaboration and cooperation
+
+	* Success in the past: two organizations working on something in common. Took extra effort but knew there was payoff
+	* Collaboration - output depends on other people
+	* A lot of exciting things being done by different implementors
+	* Few opportunities to do that as a community
+	* How can we be most effective?
+		Freelancer to lay down the skelaton and we put meat on the bones
+
+Have a number of things that we can build on POC, NCDs
+Focused approach - try to get 2-3 organizations that want to work on NCDs in the next 1-2 quarters++++
+This means working in coordination, will mean good planning
+Hope is that those interested are in agreement about what needs to get done
+Working with funders to get short term, freelance expertise to lay the foundation while breaking down the vision, something we can work on
+Each partner has something tangible, useful to their implementation  - the beginnings of what is needed for NCDs
+
+Building a common team
+	Great to get the buy in
+	
+Devs who are interested and not with the partners - can they contribute if this is broken up? 
+	Willing but organization is probably not into NCDs
+	Try to integrate as many people as possible, get time from organizations
+	How to engage us - project funded, but when work is already packed for the next two years, working on this in 6 months it's tricky+1
+		There are workloads, deliverables for the next 6 months
+	Most of what we are doing in the future includes NCD.
+	Communication, trying to look for a solution that suits everyone
+	
+Missed opportunity because there hasn't been a TPM or resources
+Mechanism for pulling us together is valuable
+Not on those who are working on their own things to pull out what is generalization 
+Biggest value - we all share a common vision, that we'll work towards a shared model
+
+Suggestion that we put 2.5% OpenMRS social tax into CDC grants - finds its way into OpenMRS Inc?+
+	Fund a core set of developers, designers, etc 
+	The rest can contribute 
+	Means OpenMRS moves forward with what implementors need without the implementors doing the heavy lifting
+	Worth thinking about this, standardizing this
+	Could not happen with the way PEPFAR is currently set up - and could happen/be a decision that each organization makes (could be in terms of 2.5% of time)
+		Means leveraging combined knowledge and getting a better idea of common work areas
+
+Appeal to distributions out there and see how we can collaborate, how we can have packages so that when you implement 3.0, you aren't doing only TB, etc.
+
+Two viewpoints are not mutually exclusive, both could occur
+
+Why fund OpenMRS 3.0 - so many people use this, incorporate other stakeholders into the community
+
+Action Item
+Coelesce those who are interested in discussing the framework, include CDC
+	Map this forward
+	Take it to the community
+Take the vision and break it down into pieces, start to see what it would look like - Design Forum if needed
+	Greg, Jonathon, Burke (a perspective is missing, where is the female in this group?) 
+Build wish list, make it expensive
+Pieces of the roadmap that are needed today
+	Coordinate some of these things and accelerate the work so partners meet deliverables
+React meeting on Friday - building out touchscreen friendly interface, need someone with React expertise
+	Community - take a month, reorganize this
+	Looking forward that there is common agreement, do a thorough code review
+	
+
+curled from https://notes.openmrs.org/omrs18-BF1 at Tue Dec 18 16:49:47 EST 2018
+OMRS 18 - December 3 S&O Meeting 
+
+Participants
+Andy
+Jan
+Terry
+Jen
+Cynthia
+
+		* Difficulty with purely volunteer organization
+			* Discipline that we don’t have
+			* Divide their attention
+			* Breakdowns to break throughs
+				* Failures 
+			* Be healthy enough to continue to contribute 
+		* Can we sustain ourselves at the current approach
+			* Hesitation from the organizational and technology approaches
+			* Do we need a radical approach
+
+	* Proposed Agenda for OpenMRS SO Evening Sessions  
+		* Unconference session on Tuesday
+			* Questions- SWOT (and where do you think that we should go under opportunity) 
+				* Organization
+				* Community 
+				* Technology 
+			* Results summarized to the SO meeting 
+		* Informants
+			* Implementation partners
+			* Key Informants
+			* Community members
+			* Leadership
+			* Macro Drivers  (ecosystem radar) 
+				* UHC, NCD, patient centered care, MCH , patient access to data, SDOH, CDS
+		* Unconference Session
+			* SWOT analysis
+			* Tech Radar Update 
+			* Emerging HIS Trends Radar 
+
+		* Birds of the Feather- SO Meeting 
+			* Summary of the SWOT to the SO Team- setting context
+			* Survive and Thrive
+				* Where do you want to go?
+				* Who do we want to be? 
+				* What do we need to get there? (resources) 
+				* What level of commitment do we need to make? 
+		* Operational part of thriving
+			* Commitment to delivering on certain activities 
+
+OMRS18- Birds of a feather: OpenMRS S&O meeting: OpenMRS Surviving and Thriving
+
+Facilitated by: Andy Kanter/Scribed by Andy, Terry, Jennifer
+Participants:
+Paul
+Burke
+Andy
+Greg
+Jonathon
+Terry
+Jan
+Hamish
+Jennifer
+Mark
+Brandon
+Mike 
+
+Andy provided a review of what lead up to this meeting. Many questions came up from the country level about the state of current implementations. Suddenly seemed to have significant progress on implementations. At the same time, some earlier concerns about not reaching our potential and the need to stay on top of implementation status.  Contextualise current criticisms as opportunities to improve processes,
+Although all failures are learning opportunities and we should push ourselves, we can’t afford to have significant failures at a time when countries are doing national rollouts. Feels like we’ve been treading water. Fiscal health was a roller coaster situation. Have had experiences where people have approached us and indicated that we haven’t moved fast enough, not contributed to our potential.Approach: foster community, let others in the community do stuff, the organization wouldn’t take as much of a directive role (like DHIS2, have MOUs, etc). Rumours that people weren’t happy with OpenMRS and were looking at other options. We need positive reference sites, not negative ones. Let’s start by have a true assessment of the state of OpenMRS from a community, technology and organizational perspective. We can then make some commitments on what to do next. We struggle in leadership not always communicating or making commitments due to volunteer nature of the organization. Recent hiring of Jen and Cynthia should help change this, but we still need to be clear when we are asking for something, and get explicit commitment (with timing, etc.) to ensure follow through.
+
+We went around the table for general impressions about the state of the state:
+	* “Never will be happy” [because he always thinks we can do more] but we need to rely on the community. We need to have the implementations represented in these meetings. Uganda is having some growing pains and perhaps some personality issues, but the challenge has been changing scope. Makerere had originally proposed and was paid for an HIV system, but now the MOH wants a primary care system. This is true everywhere now. We have to recognize the growing need for a more general system. Kenya MOH is totally behind Kenya EMR and open source. Palladium is going to increase Kenya EMR support and move away from IQ Care. Status quo: we have no formal, financial relationship with the implementers. Community or Inc, there are missing pieces of information. We need to have the resource base to support our implementations.
+
+	* People don’t really know what we are doing. We have made major strides. Even touch clients like MSF are happy. He is concerned about multiple UIs, though. We need to strengthen the community.
+
+	* Frustrated by the slow pace of development, but doesn’t think PIH can contribute more. This is a lost opportunity.
+
+	* Pushed back on the sense of urgency. Thinks building health systems takes time. Technically, everything moves quickly. Recommends way to get farther faster: more project management and coordination centrally, centralized direction that comes from conversations from the major organizations
+
+	* Frustrated. Tried to do a landscape assessment but people pushed back or were not forthcoming. She was surprised at the lack of openness. Don’t know if what she was told is accurate or not. Perhaps folks are under NDA and can’t share? Create sensitization on how information provided will and will not be used. Digital Health Atlas tool - people are uploading the systems in use in their countries. Would be useful to know what is being implemented where. Number of modules are confusing. More encouragement for regional communities and meetings. Need to encourage decentralization.
+
+	* Has 40 pages of stuff that we need to be doing. We have not been able to evolve a common product. Referenced his lightning talk: the thing that is missing is collaboration, community is talking and sharing a lot. There is not real collaboration. In the past, a few organizations actually worked together to build a shared platform. It;s less about what we do and more about getting a few organizations to say what we can do to solve a problem and do it togetherOpen source communities should not have leadership communication issues. If so, that is a big red flag. Need a cultural shift. We need to do more leading.There's a clear message that implementations can’t afford to lead this process.++ Need 3-4 devs who can move things forward, harvest
+
+	* Here for OpenIMIS integration. Have 4 country implementation and 2-3 EMRs which don’t communicate… looked at OpenMRS but would have required a lot of support to use. Need to handle scale and multiple facilities from a single server. Bahmni seemed like a good solution but too many older versions made him worry. Required a lot of community support. Needs to have community and/or other support to make the decision to use OpenMRS. 
+
+	* Agrees that we should complain that we are not doing more. Thinks the community is strong with good lines of communication. Worried about the product, though. technology is a decade and a half old. Do we want this to be the beacon on the hill? Want this to be something that is making things easier. Compare the “friction” added by using OpenMRS to other products. Applies to new partners, too. Too hard to implement. Look at GNU health.
+
+	* Excited to be here. Thrilled with potential of OpenMRS. Thinks we should be more like a curated community rather than allowing customization.Provide easier path for people to get their hands on the software while allowing customization, Need great core for 80% with good updatability. Need to be a provider and facilitator of the community. Need to find a way to make sure that implementations are contributing to core. We need to grow and change organizationally. There is a rigorous path where new things from the community come in. A way to massage what is coming in
+
+	* Need to increase women and diversity in the organization. Need to make it easier for people to participate. If we don’t make it easier, people will start using something else. Need more commitment from people. We need to hold ourselves to being like a business. If we don’t have money, resources, we will fail
+
+	* OpenMRS serves developers really well. Need core group of developers. We are losing a massive amount of knowledge with departures. We can decentralize some of the development decisions. We are well connected to the funders of our implementers but they don’t fund OpenMRS (us). Need to have more implementers in the meetings. We don’t have enough participation of our stakeholders. Funders/MOH look at our community as an unpaid-for bonus. Organization is better than we were but we are not where we need to be. We need to operate more like a business. We are a long way away from that. Need a strategy around fundraising. Board of directors is actually doing much better over past 2 meetings. They are trying to fix the Inc. We have a good product, but not a great product.
+
+	* Feels pretty good, but we are missing a lot of key community members. Feels energized by the amount of tech advancement and collaboration but worried that there is a lot of forking going on. Invest in more structure. Loss of some critical people from the community and what will be the impact of that
+
+	* Has heard concerns from community about not having core developers. Community is strong: those that came to the Community SWOT were new to the community and wanted to know more about what community is, how they can participate. Older members went to other sessions - this is a sign of the community's strength. Need to improve some of our processes like sponsorship. We mostly support developers. Talk is not designed for new users. People feel intimidated.
+
+Good discussion followed. We agreed that we need to have more input into the process from our community. We need to provide more thought leadership and we need to do something BOLD to pull people out of their inertia. We have to motivate people without increasing expectations so that they don’t get disappointed.
+
+Themes:
+	* Curation
+	* What is the next step of what we should do 
+		* Intentional governance process for engagement in leadership
+			* Certain expectation if you are doing a large scale implementation
+	* Inertia 
+		* More sophisticated about informatics
+		* Having great ideas every year and not getting them done
+		* How to draw everyone out of the inertia
+		* Paint a broad picture of the future that will bring them out of their inertia
+	* Need to have a couple of spot goals
+		* There are a couple of things that we can do and moe them along
+		* Focus on a few goals that are needed
+	* What do we need to do differently
+		* What do we need to do something
+			* Leadership and direction (curated leadership/visioning/enabling infrastructure) 
+			* Clear vision of what we are working towards
+			* Changes in engagement 
+				* Engage the implementers
+			* Global conversation to hire about what is OpenMRS 3.0? 
+		* What do we need to deliver 
+			* For instance-- new UI is not something that can be done piecemeal
+			* Clear goals (DHIS2 integration, UI)
+Action
+	* Announce on Talk before the end of meeting why it’s important to share information 
+	* Get more people at the table to discuss what is needed
+	* One page statement of what OpenMRS in 5 years will be (press release and what it will be)  (one week is there) - next week - send to people who are going to do this analysis
+		* Commonality of what is there
+		* Visioning exercise
+		* Small group come together to do this
+	* Run a process:/ how we frame it/ short term next steps - Thursday 
+		* how can we be the premier EHR in five years ?  
+		* How can we do this
+		* How do we get more women involved 
+	* Friday’s message: Can we state our commitment? 
+		* Coming together to do the community to the next level
+		* Paint the deliverable in five years - working on a plan to report back to you in the near future
+		* Emotional purpose
+		* We are going to achieve more.. Change to achieve that potential  
+		* synthesis that we write about our vision/ what is the wow thing
+		* Great ideas; we want to move forward/ how to grab this
+		* We are optimistic about our future
+		* Committed to a process to formulate a concrete vision of what we wish we could do 
+			* Building an application as a community (technical and clinical) 
+		* Annual report
+
+
+AGREEMENTS:
+1. We will inject a community thought-building experiment into tomorrow’s plenary (after site visits). Gregory and Jen will lead a process to collect a lot of ideas from the entire conference around the product, the community and the organization. [This was done and was successful]. By next S&O meeting, they will compile the results to provide leadership with feedback.
+2. Everyone in this S&O meeting committed to writing up a page or half-a-page “statement or sample press release” of what OpenMRS would be in five years. Everyone will have this done by the next S&O meeting and Andy, Terry and Jan will compile for the next meeting after that.
+
+
+curled from https://notes.openmrs.org/omrs18-day1 at Tue Dec 18 16:49:47 EST 2018
+2018-12-4 After Action Review
+
+	* Try to keep on time!
+	* Arrange room in circles instead of classroom
+	* Identify facilitators for each session
+	* Put session topic on easel
+	* Work with hotel so meeting room doors aren't locked (happened in Turkana 5)
+	* 
+
+curled from https://notes.openmrs.org/omrs18-day2 at Tue Dec 18 16:49:47 EST 2018
+OMRS18 After Action Review
+5 December 2018
+
+What did you expect to happen today?
+	* OpenMRS Programs would get into high gear
+	* Awesome Lightning Round
+	* Goody bags
+	* Group photo
+	* My shirt size
+	* Discussion on CIEL and OCL
+	* See great demos
+	* Have meaningful conversations with others
+	* Be on time (to something... anything!)
+	* Expected to hear Burke's Gong during Lightning Rounds
+	* Attend interoperability session
+
+What happened?
+	* Saw great demos
+	* Did not keep time on anything
+	* Interoperability session didn't happen
+	* Cabinet Secretary spoke to everyone
+	* DHIS2-OpenMRS integration discussion
+	* Interesting Fish Bowl on universal health coverage
+	* Good discussion on public health data use from the hOpenMRS
+	* My cloning machine failed (couldn't be in two places at once)
+	* 
+
+
+What can we change?
+	* Improve on time keeping, especially after lunch
+	* Identify facilitators for sessions
+	* Try to arrange breakout rooms in circles (instead of classroom)
+	* Would be nice to have takeaway summaries (e.g., 2 min summary of each session)
+	* 
+
+
+
+
+
+
+curled from https://notes.openmrs.org/omrs18-day3 at Tue Dec 18 16:49:48 EST 2018
+What did expect to happen today?
+	* Site visits
+	* We would be more timely
+	* To hear about people's interests for the future of OpenMRS
+	* To see how OpenMRS was being used in Kenya
+	* A good ETL discussion
+	* Heated discussions
+	* More around Bahmni and HIE discussion – people coming with solutions & ideas
+	* Expected a demo of how OpenMRS was used at a facility to capture NCD data
+	* 
+
+What actually happened?
+	* Site visits
+	* Learned about innovative work being done at sites in Kenya
+	* Impressed by interoperability between OpenMRS and other systems
+	* Had a good ETL discussion
+	* We had a discussion about CDS, resurecting items from last year and came up with a plan forward
+	* Group activity on future of OpenMRS
+	* Got to meet Steve Wanyee's father
+	* 
+
+What should we do differently?
+	* Inspired by CDS, consider starting uncoference sessions by looking at the previous year's discussions & action items
+	* Announce BoF locations & times or make it part of the signage
+	* Powerpoint presentations should be shared
+		* Like https://om.rs/18lightning
+	* Improve organization of site visits that disrupt the clinic (patients are waiting). Site visits felt unorganized.
+	* 
+	* 
+
+
+
+
+
+curled from https://notes.openmrs.org/omrs18-day4 at Tue Dec 18 16:49:48 EST 2018
+OMRS18 - Final After Action Review
+
+
+What did you expect to happen?
+	* 2 hour flight delay, didn't find someone when I arrived at the airport. Almost had to take a taxi.
+	* Learn more about OpenMRS
+	* See lots of new examples of how OpenMRS is being used
+	* See old friends
+	* Have too many things to work on over the next year (from OMRS18)
+	* go to the site visit and see how they are using health information systems
+	* Not expecting to have a high quality site visit organization
+	* Expected the internet to be the inter-"not" at the conference
+	* Looking forward to meeting people in the community, "seeing the faces behind the handles"
+	* Expecting to see more women
+	* Expecting to learn a lot about NCDs
+	* Working with the community and build expectations for the next year
+	* learn about Kenya's tradjectory and how to support them
+	* Looking forward to meeting more PIH and CIEL colleagues (connecting faces to online accounts)
+	* Had exprience working with open source but coming to learn from the OPENMRS community was super exciting for me
+	* Had a list of 10 problems to get solved at OMRS18. 4 were knocked off in PoC session (60% of needs met).
+
+What actually happened?
+	* Going home a happy man
+	* Internet was awesome!!!!! Best internet and best food at an OpenMRS conference
+	* Site visit yesterday was awesome, learned about the interoperability layer
+	* I saw a country were I wanted to live, the cabinet sectrety blew me away->we care about people, health, and that there are multiple forces involved
+	* I saw a lot of old a new colleagues from the CDC, which came across as a really strong committment
+	* As a newbie I thought I wouldn't know anyone, but I knew a lot of the people, and met many more
+	* I saw two conferences running side by side succesfully (HELINA + OpenMRS)
+	* Met at of amazing community members, looked at the work other people have doing
+	* Good case for having OMRS19 in Nepal
+	* Inspired by site visits. Very inspiring and motivating as a developer. Write code! Save lives!
+	* Able to see the people on talk in life
+	* Mics didn't always work right away, but in general audio in rooms was very well done
+	* Got to meet many people who I've interacted with online
+
+What should we do differently (e.g., for OMRS19)?
+	* Make sure people have a contact when arriving at airport in case of issues.
+	* Lot of enthusiasm to talk together up front, but front end of conference was very structured. Maybe try to have some unstructured time on the first day to allow for people to get initial network desires addressed
+	* Try to have lightning talks earlier in the conference, so I'd know who to talk with
+	* More time for implementors to talk about their issues
+	* Blend of lightening round and unconference to share best practices
+	* Identify facilitators with each topic up front (rather than scrambling for them later, maybe write names on the topic suggestions)
+	* Overlap of conferences was good
+	* Add in some tutorial sessions, similar to what was done in singapore (Had 2 days of tutorials up front)
+	* Self-identify people at registration of which stage of learning they are in (to allow us to bring them together as well as ensure we have a blend in sessions)
+	* Might help to have hackathon at beginning
+	* More structured blocks of slack time
+	* Overlap with HELINA great, but wasn't able to attend aqny sessions, maybe have a "field trip" scheduled between the two evevnts to have a shared lunch, or ability to view poster session, or see presentations given (HELINA may enjoy an unconference session) +1. Limiit competitive overlaps, but provide more thoughtful interaction opportunities. Credit for dual registration (e.g., only one lunch was eaten).
+	* Ability to add $100 in registration to add to scholarship capacity
+	* Have a design-a-thon for non-technical people to talk about user-centered design, issues in the application, etc.
+	* Having people prepped to talk about things up front (e.g., starting topic proposals & scheduling up front)
+	* Have awards for people who have made substantive contributions over the past year
+	* Have the name of the organization on the badge
+	* Less expensive hotel
+
+
+
+
+
+
+
+
+
+
+
+
+curled from https://notes.openmrs.org/omrs18-his-trends at Tue Dec 18 16:49:49 EST 2018
+OMRS18 - Emerging Trends in OpenMRS
+4 December, 2018
+
+Creation of a radar ( adopt, assess, trial, hold) for focus health areas for OpenMRS
+
+Ideas for starting....https://docs.google.com/document/d/1yC4FF3tO_nvwHw8Yzsyyl717nJzkqBUV0e23brI-Xp8/edit
+E
+
+
+Attendees
+Terry - facilitator
+Jan - facilitator
+Carina
+Matthew 
+Edward
+Moyosola Bamidele
+Relebohile-rlebatla@pih.org
+Natalie-nprice@pih.org
+Wyleyen
+
+ADD NAME AND EMAIL ADDRESS if you want to participate as we move forward
+
+
+Notes
+
+Jan: Today we should come up with a list of long-term goals and come up with a Radar (see http://radar.openmrs.org/)
+Terry: Jan will walk us through the four ways we assess things to put on the Radar. We want to ensure that the community is informing the roadmap. A lot of people previously have been frustrated by not seeing the fruits of their work at the conference bear out. We hope to address that by creating this Radar which will inform the creation of the Roadmap.
+Brandon: It might make more sense to have the category of "Trial" inside of "Hold" rather than outside, as discussed in a Design Forum a month ago.
+Jan: Let's talk about those categories. Refer to presentation for the specific definitions of these 
+Jonathan: Are we going to use this new ordering (Adopt, Trial, Assess, Hold) for the Radar?
+Jan: I dunno, should we? What does everyone think? How about the framing/wording?
+Questions: how do you go from trial to adopt
+	also include the resources that may be needed to move things forward 
+Q: Should "Hold" say "moving away"?
+	The Thoughworks tech radar does this 
+	We might want to talk about "moving away" from data exchange techhnologies, which don't age well
+Jan: What are the domains/quadrants we want on our radar? (in presentation: Direct Patient Care, Patient Centric Care, Population Health, Admin/Billing/Standards)
+Terry: We hope to be able to cover a lot of breadth by stratifying these categoreis.
+Greg: The four quadrants I've used are Frontend, Database, Analytics & Clinical Decisions, Other (Billing, Admin, etc)
+Ray/Uganda: I'd like us to include Pharmacy & Supply Chain management; infections; early sentinel awareness; other public health activities 
+
+Jonathan: Patient centric stuff might fall under Population Health
+Jessica: Is one radar enough?
+Jan: We could have a radar for each of these things, and figure out categoreis within them. This gets complicated, but would be interesting.
+Terry: We'd like to ask now what people see as the emerging trends in HIS. e.g. Genomics. Then we can prioritize these using the Radar.
+
+### HIS Trends Brainstorm
+	- Workflow (b/c clinical staff overworked)- capture workflow and trends
+	- Apps that work well offline
+	- Jessica/AMPATH: Population Health (we're still figuring out what that means. Includes economic empowerment, insurance, and healthcare. How are we helping a community stay healthy?) really groups of people 
+	- Samuel/Uganda: Data use, how to use data for clinical decision support  for individuals at POC (James/Uganda: useful at POC)
+	- James/Uganda: Getting information from patients, pt reported outcomes, pt portals; translation of these tools; patient centric care ( tools for patients to contribuite/ patient portals/ patient participation) 
+	- Dave/PIH: More tools that are easily configurable and modern tools for use by non-developers (e.g. "Squarespace for the EMR"); tool framework to share across institutions 
+	- Connecting data in from other sources- connecting disparate dB  ( census data, clinical, etc)
+	- Modularity. We should build things that can be shared among installations
+	- Ray/Uganda: We need to structure things right for modularity and sharing. Right now in Uganda everything is standalone.
+	case registries ( impact on workflow and patient management) 
+	CDS- lab data triggers plus x equals more information for the provider 
+	patient engagement/ contract tracing
+	- Carina: Pt portals
+	- Mike/Liberia: Importing data from existing patient charts, when developing a new OpenMRS implementaiton (keep legacy patient data during move to patient chart/EMR) 
+	biometric capture 
+	- Clement: Helpful prompts & feedback for clinicians at POC, on data entry
+	
+Jan: Now we'll need to sort these things and put them into the Radar. I'd like Terry and I to work with others on this.
+	Carina Matimbe, Sasha, Mark?? (add your names)
+	Sasha (akulinkina@gmail.com)
+
+Terry: We seem to have a real focus on patient-centered care here, but we don't seem to have a corresponding lot of unconference sessions about this. So this has been very helpful for understanding what's interesting in the future.
+	
+ TO DO:
+     
+     1. identify people that may want to folow up
+     2. relook at the proposed radar to see what changes can/should be made
+     3. compare to the tech radar
+
+1 . Tech Radar as a model for this presentation 
+2. Clinical Radar
+2. Domains 
+	adopt
+	trial 
+	assess
+	hold 
+
+
+curled from https://notes.openmrs.org/omrs18-plenary at Tue Dec 18 16:49:49 EST 2018
+
+
+OMRS18 - Plenary: Measure, Monitor, Mature
+4 December, 2018
+
+
+Notes
+
+1. refer to slide deck 
+2. Maturity Model- based on the WHO tooklit 
+3. assess readiness for digital HIS
+	HIS Interoperability Maturity toolkit
+	
+4. what is the impact and what are the outcomes from an HIS system
+	information at the right time and right information
+	how can we measure waht the systems can do
+	apply concepts from HR IS systems to the HIS 
+	tool that has a shared model
+5. use of global goods in the digital HIS environment
+	developed these tools with international input
+	establish communities of practice 
+6. Uganda experience with the tools
+	facility and pop health data bases
+	housed in different institutions
+		eHealth, bureau of statistics
+		challenges with different data sets
+		support for M&E was needed
+		helped the country understand what is needed- beyond th systems to include policies , resources, discussions, etc 
+7. Value of countries doing this
+8. modification of maturity model to be included for local communities
+9. identification of overlap of models--what can be done in one place can be used in another
+10. define the value framework that can be used
+11. HIS stages of continuous improvement; want to assess continuous maturity of the system 
+12. leadership and governance is important; all heads of departments need to be aware; everyone agreed that this is the direciton that is needed to be done
+13. how do people move this work forward?
+	countries with eHealth strategies
+	digital processes that need to be developed and institutionalized
+	take the tool and use it--how will this help me and help my country
+	
+	
+
+	
+
+	
+	
+	
+
+
+curled from https://notes.openmrs.org/omrs18-radar at Tue Dec 18 16:49:50 EST 2018
+OMRS18 - Tech Radar Update
+
+Creation of a radar (adopt, assess, trial, hold) for focus health areas for OpenMRS
+
+Attendees
+Burke Mamlin
+Mark Goodrich
+Mike Seaton
+Kaweesi Joseph
+
+
+
+
+
+Notes
+Listed technologies
+Order update - Change order to Adopt-Trial-Assess-Hold (although order of Adopt-Hold-Trial-Assess may be better because Hold implies resources necessary to maintain. So it's useful to know that Adopt/Hold will have resources to support)
+
+Radar here: https://otm.rs/radar
+Data available here: https://om.rs/radardata (possible to add read-only by default, currently requires requested access)
+
+curled from https://notes.openmrs.org/omrs18-swot at Tue Dec 18 16:49:50 EST 2018
+OMRS18 - Community SWOT Analysis
+
+Attendees
+Lead: Jen
+Note taker: Cynthia
+
+
+Notes
+90% of attendees are new to the OpenMRS community
+A few have been here a year, a few more 2 years and a couple >2 years.
+
+Health of Community:
+OpenMRS is known having a strong community. There are a lot of people ready to help each other. Don't seem to have to know which roles to address their questions to.
+Community could help to address specific queries... but basic functionality training is not well covered. PIH thought about creating the training materials.
+
+What do people want from the community?
+1. Seems that it is stronger for the developers, not the business folks or clinical folks. Perhaps add space for business (application of code), users and training.
+2. Helpful to know where the connections to other systems are discussed? Is there a community of communities where those connections are made? More unique connections created, however, then have a separate community. For example, perhaps Bahmni is not the same as OpenMRS community.
+
+
+curled from https://notes.openmrs.org/omrs18-universal-healthcare at Tue Dec 18 16:49:50 EST 2018
+OMRS18 - Fish Bowl Session on Universal Health Coverage
+5 December, 2018
+
+Notes
+
+George: I had hoped to see some notes here.. :)
+
+Jessica: AMPATH is creating a population health program that Jessica is heading up. They are registering everyone in the county. Giving agricultural/economic support, insurance option, not using national ID number.
+
+Kevin: Most households in Africa are challenged during insurance registration since many times not all the people are available in the household at the time of registration. Jessica: >18 y.o. is considered a household (national health insurance plan). Greg: 100,000 people in one county (enrolled in health network) Offline REDCAP database on a small tablet. Vital information with known IDs. Tagged missing fields. Create three separate datasets: National insurance set, EMR set, analytic set. Try to fill out the missing data on next household visit. Provide card at time of registration and scanned by tablet. This ID is associated with an internal MPI. They are working with ELEMENT (a company that can provide biometric identification using baby foot, hand or face).
+
+
+
+
+
+curled from https://notes.openmrs.org/omrs18-women-in-openmrs at Tue Dec 18 16:49:51 EST 2018
+OMRS18 - Women in OpenMRS
+7 Dec 2018
+
+
+Fishbowl Session- come up and engage 
+
+WIki page for diversity
+.. https://wiki.openmrs.org/display/RES/Diversity
+
+
+Notes
+
+Sharing of ideas
+1.     sharing knowledge with other women/ girls
+	a.     movement of women from training into leadership
+2.     would be good for us to have more women working with OpenMRS
+		*  ' the woman is the soul of our society'; when you bring ladies into OpenMRS, you are creating a community
+		* 'you guys; you can make it!'
+		* 'is this a man based project'
+		* women can do better also ; take up the mantle and go to technology 
+		* lets balance the equation; in every area, we need men and women (and this does not exclude OpenMRS)
+		* tech can be looked as something for men
+		* women need encouragement as there are many 'pull downs'
+		* there are great women who has done this-- Grace Hopper  (i can be that kind of woman)
+		* 'and trust me, women have brains'
+		* more women to achieve the 2030 goals
+		* 'as much as we are few, we can make a change'
+
+4. commitment to diversity
+5. how to encourage more women to be engaged in OpenMRS
+		* what are the barriers for participation
+		* need to identify these barriers
+		* encourage the young girls
+6. the conversation needs to include men
+		* i may do the wrong thing;; if i do, please call me out on this and let me know as a man what i need to do 
+		* help me walk the right path
+		* empower me to direct me so that i can get better 
+		* help me to help us achieve diversity
+7. diversity needs to be represented across all of OpenMRS
+		* 'rabbit sticky' idea--dont go down rabbit holes and make sure that women have a place to speak
+		* be mindful of cutting people off
+		* women in leadership ( women are given leadership based on merit; men are given positions based on potential)
+8. Women Advancement and Leadership Support - RTI
+		* need to go beyond the discussion
+		* make available platforms that people know what OpenMRS is taking the steps to create a place to support this work
+9. Ways to improve women in OpenMRS
+		* consider training/fellowship options
+		* World Bank- STEM support
+		* multiple organizations t/o Africa that are supporting womens participation
+		* leverage our working partnerships 
+		* appealing to the men for their attention and their support-- encourage and share opportunities 
+		* scholarships made available-- include diversity as a factor for new people being engaged (consider providing childcare)
+		* ohter opportunities to be kind to people one on one over email and non F2F interactions
+			* need to be kinder and gentler in the way that we respond over email
+			* maybe you are speaking to your mom or your sister
+			* Be kind, for everyone is fighting a hard battle- Movie Wonder
+		* dont wait for women to call you out if there is a probem-- be more sensitive and do the little extra self education  to increase your sensitivity
+10.
+		* continue to work and invest
+		* some of the diversity has been intentional and some has been unintentional
+		* may need to encourage this to be more intentional ( make diversity criteria intentional)
+			* choose what to participate in that would reflect this commitment 
+			* being deliberate requires effort
+		* diversity MUST be intentional (active, not passive)
+			* if the table doesnt have the representation, it is hard to get diversity
+11. Uganda example of boot camp (get in touch if you want more information)
+		* if within your programs in country, lets spread the skills around with real projects
+		* OpenMRS talent-- develop the talent; need local capacity ; still an experiment
+		* can tip the scale based on who is involved and engaged 
+12. 
+		* may be able to expand the concept of boot camp to other countries if desired 
+13.
+		* concern about keeping the balance with, for instance, scholarships
+14. Men should educate themselves
+		* https://shift.newco.co/2017/07/25/what-its-like-to-be-a-woman-at-a-tech-conference/
+		* http://www.bbc.com/capital/story/20180727-mansplaining-explained-in-one-chart
+		* https://code.tutsplus.com/articles/10-things-men-can-do-to-support-women-in-tech--cms-30726
+		* https://www.fastcompany.com/3059036/what-do-women-want-at-hackathons-nasa-has-a-list
+		* https://morethancode.cc/T4SJ_Exec_Summ_final_web.pdf
+		* Project site: https://morethancode.cc/
+15. Reevlaute the dev categories to better understand why there aren't any women there, and make it possible for women to be in the higher positions
+16. Change takes a long time. We need to be intentional about this change. In five years, this room should look different. "What I want in 2030 is diversity."
+17. Recognize and utilize womens' existing expertise in non-development roles -- program management, UX, etc. It takes much more than just technology to make a great project.
+
+OpenMRS Diversity Page: https://wiki.openmrs.org/display/RES/Diversity (resources about how to increase diversity at the bottom of that page)
+
+Notes from 2017: https://docs.google.com/document/d/1KYo43zYzc0yXykIvcDqbQ0imaoSxAl7J_08xgdye2Fg/edit#heading=h.dibahng4okam
+
+
+
+Action Items
+
+1. folllow up with RTI about WALS options and OpenMRS (? perhaps we can get support from them?)
+2. include women in OpenMRS in the annual report-- make this a highlight
+3. consider training/fellowship for women
+4. update the diversity WIKI page
+5. figure out how to commit to diversity--what does that look like
+
+
+
+
+
+
+
+
